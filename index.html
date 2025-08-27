@@ -31,26 +31,14 @@ colgroup col:nth-child(4){width:10%}
 <table class="job-table" aria-label="Job Table">
   <colgroup><col><col><col><col></colgroup>
   <thead>
-    <tr>
-      <th>Job Info</th>
-      <th>Download</th>
-      <th>Enter Name</th>
-      <th>Send</th>
-    </tr>
+    <tr><th>Job Info</th><th>Download</th><th>Enter Name</th><th>Send</th></tr>
   </thead>
   <tbody>
-    <!-- Jobs 1–5 -->
-    <!-- Repeat block 5 rows -->
-    <tr data-job-id="job-001">
-      <td><div class="job-title">Job 1 Title</div><div class="job-desc">Sample description.</div></td>
-      <td><a class="btn dl" href="files/job1.txt" data-fn="job1.txt">Download 1</a></td>
-      <td><input class="name-input" placeholder="Enter your name"></td>
-      <td><button class="send-btn" type="button">Send</button></td>
-    </tr>
-    <tr data-job-id="job-002"><td><div class="job-title">Job 2 Title</div><div class="job-desc">Sample description.</div></td><td><a class="btn dl" href="files/job2.txt" data-fn="job2.txt">Download 2</a></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn" type="button">Send</button></td></tr>
-    <tr data-job-id="job-003"><td><div class="job-title">Job 3 Title</div><div class="job-desc">Sample description.</div></td><td><a class="btn dl" href="files/job3.txt" data-fn="job3.txt">Download 3</a></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn" type="button">Send</button></td></tr>
-    <tr data-job-id="job-004"><td><div class="job-title">Job 4 Title</div><div class="job-desc">Sample description.</div></td><td><a class="btn dl" href="files/job4.txt" data-fn="job4.txt">Download 4</a></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn" type="button">Send</button></td></tr>
-    <tr data-job-id="job-005"><td><div class="job-title">Job 5 Title</div><div class="job-desc">Sample description.</div></td><td><a class="btn dl" href="files/job5.txt" data-fn="job5.txt">Download 5</a></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn" type="button">Send</button></td></tr>
+    <tr data-job-id="job-001"><td><div class="job-title">Job 1 Title</div><div class="job-desc">Sample description.</div></td><td><button class="btn dl" data-fn="job1.txt" data-content="This is sample file for Job 1\nLine 2: Some example data\nLine 3: End of file">Download 1</button></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn">Send</button></td></tr>
+    <tr data-job-id="job-002"><td><div class="job-title">Job 2 Title</div><div class="job-desc">Sample description.</div></td><td><button class="btn dl" data-fn="job2.txt" data-content="This is sample file for Job 2\nLine 2: Some example data\nLine 3: End of file">Download 2</button></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn">Send</button></td></tr>
+    <tr data-job-id="job-003"><td><div class="job-title">Job 3 Title</div><div class="job-desc">Sample description.</div></td><td><button class="btn dl" data-fn="job3.txt" data-content="This is sample file for Job 3\nLine 2: Some example data\nLine 3: End of file">Download 3</button></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn">Send</button></td></tr>
+    <tr data-job-id="job-004"><td><div class="job-title">Job 4 Title</div><div class="job-desc">Sample description.</div></td><td><button class="btn dl" data-fn="job4.txt" data-content="This is sample file for Job 4\nLine 2: Some example data\nLine 3: End of file">Download 4</button></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn">Send</button></td></tr>
+    <tr data-job-id="job-005"><td><div class="job-title">Job 5 Title</div><div class="job-desc">Sample description.</div></td><td><button class="btn dl" data-fn="job5.txt" data-content="This is sample file for Job 5\nLine 2: Some example data\nLine 3: End of file">Download 5</button></td><td><input class="name-input" placeholder="Enter your name"></td><td><button class="send-btn">Send</button></td></tr>
   </tbody>
 </table>
 
@@ -59,27 +47,19 @@ colgroup col:nth-child(4){width:10%}
   <a id="pager-next" class="btn" href="page2.html">Next Page →</a>
 </div>
 
-<p class="small">TXT files are in /files/. Send button is dummy.</p>
+<p class="small">TXT files are generated on the fly. Send button is dummy.</p>
 
 <script>
-document.querySelectorAll('a.dl').forEach(a=>{
-  a.addEventListener('click', async (e)=>{
-    try{
-      e.preventDefault();
-      const url = a.getAttribute('href');
-      const fn  = a.getAttribute('data-fn') || 'download.txt';
-      const res = await fetch(url, {cache:'no-store'});
-      if(!res.ok) throw new Error('fetch failed');
-      const blob = await res.blob();
-      const obj  = URL.createObjectURL(blob);
-      const tmp  = document.createElement('a');
-      tmp.href = obj; tmp.download = fn;
-      document.body.appendChild(tmp); tmp.click(); tmp.remove();
-      URL.revokeObjectURL(obj);
-    }catch(err){
-      // Fallback: normal navigation
-      window.location.href = a.href;
-    }
+document.querySelectorAll('.dl').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const content = btn.dataset.content;
+    const filename = btn.dataset.fn || 'download.txt';
+    const blob = new Blob([content], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
   });
 });
 </script>
