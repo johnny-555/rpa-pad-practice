@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RPA PAD Practice — Page 2</title>
+<style>
+:root{--bd:#e5e7eb;--pri:#4a90e2}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:16px}
+h1{margin:0 0 10px;font-size:18px}
+table{width:100%;border-collapse:collapse;margin:8px 0;table-layout:fixed}
+th,td{border:1px solid var(--bd);padding:10px;text-align:center;vertical-align:middle}
+th{background:#f5f7fa}
+colgroup col:nth-child(1){width:48%}
+colgroup col:nth-child(2){width:22%}
+colgroup col:nth-child(3){width:20%}
+colgroup col:nth-child(4){width:10%}
+.job-title{font-weight:700;text-align:left}
+.job-desc{color:#555;font-size:.92rem;text-align:left}
+.name-input{width:95%;padding:6px}
+.btn,.send-btn{padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:#fff;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover,.send-btn:hover{border-color:var(--pri)}
+.pager{display:flex;justify-content:space-between;margin-top:10px;gap:8px}
+.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.small{color:#666;font-size:12px;margin-top:6px}
+</style>
+</head>
+<body>
+<h1>Job List (RPA Practice: TXT Download) — Page 2</h1>
+
+<table class="job-table" aria-label="Job Table">
+  <colgroup><col><col><col><col></colgroup>
+  <thead>
+    <tr><th>Job Info</th><th>Download</th><th>Enter Name</th><th>Send</th></tr>
+  </thead>
+  <tbody>
+    
+        <tr data-job-id="job-006">
+          <td>
+            <div class="job-title">Job 6 Title</div>
+            <div class="job-desc">Sample description.</div>
+          </td>
+          <td><a class="btn" download="job6.txt" href="files/job6.txt">Download 6</a></td>
+          <td><input class="name-input" placeholder="Enter your name"></td>
+          <td><button class="send-btn" type="button">Send</button></td>
+        </tr>
+        <tr data-job-id="job-007">
+          <td>
+            <div class="job-title">Job 7 Title</div>
+            <div class="job-desc">Sample description.</div>
+          </td>
+          <td><a class="btn" download="job7.txt" href="files/job7.txt">Download 7</a></td>
+          <td><input class="name-input" placeholder="Enter your name"></td>
+          <td><button class="send-btn" type="button">Send</button></td>
+        </tr>
+        <tr data-job-id="job-008">
+          <td>
+            <div class="job-title">Job 8 Title</div>
+            <div class="job-desc">Sample description.</div>
+          </td>
+          <td><a class="btn" download="job8.txt" href="files/job8.txt">Download 8</a></td>
+          <td><input class="name-input" placeholder="Enter your name"></td>
+          <td><button class="send-btn" type="button">Send</button></td>
+        </tr>
+        <tr data-job-id="job-009">
+          <td>
+            <div class="job-title">Job 9 Title</div>
+            <div class="job-desc">Sample description.</div>
+          </td>
+          <td><a class="btn" download="job9.txt" href="files/job9.txt">Download 9</a></td>
+          <td><input class="name-input" placeholder="Enter your name"></td>
+          <td><button class="send-btn" type="button">Send</button></td>
+        </tr>
+        <tr data-job-id="job-010">
+          <td>
+            <div class="job-title">Job 10 Title</div>
+            <div class="job-desc">Sample description.</div>
+          </td>
+          <td><a class="btn" download="job10.txt" href="files/job10.txt">Download 10</a></td>
+          <td><input class="name-input" placeholder="Enter your name"></td>
+          <td><button class="send-btn" type="button">Send</button></td>
+        </tr>
+  </tbody>
+</table>
+
+<div class="pager">
+  <a id="pager-prev" class="btn" href="page1.html">← Previous Page</a>
+  <a id="pager-next" class="btn" href="page3.html">Next Page →</a>
+</div>
+
+<p class="small">TXT files are in /files/. Send button is dummy.</p>
+</body>
+</html>
