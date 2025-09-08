@@ -24,25 +24,10 @@ colgroup col:nth-child(4){width:10%}
 .nav-btn[disabled]{opacity:.5;cursor:not-allowed}
 .small{color:#666;font-size:12px;margin-top:6px}
 .status{margin-top:8px;padding:6px 8px;border:1px dashed var(--bd);border-radius:8px;font-size:12px;color:#333;min-height:1.6em}
-/* RPA bridge */
-.bridge{display:flex;gap:8px;align-items:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fafafa;margin:6px 0 12px}
-.bridge input{padding:6px;border:1px solid var(--bd);border-radius:8px}
-.bridge label{font-size:12px;color:#333}
 </style>
 </head>
 <body>
 <h1>Job List (RPA Practice: TXT Download) — Page 3</h1>
-
-<!-- RPA Bridge -->
-<div class="bridge" aria-label="RPA Bridge">
-  <label>Row <input id="pad-row" type="number" min="1" max="999" value="11"></label>
-  <label>Name <input id="pad-name" type="text" placeholder="name here"></label>
-  <button id="pad-fill" class="btn" type="button">Fill name</button>
-  <button id="pad-download" class="btn" type="button">Download</button>
-  <button id="pad-send" class="btn" type="button">Send</button>
-  <button id="pad-fill-dl-send" class="btn" type="button">Fill+DL+Send</button>
-  <button id="pad-next" class="btn" type="button">Next Page</button>
-</div>
 
 <table class="job-table" aria-label="Job Table">
   <colgroup><col><col><col><col></colgroup>
@@ -50,40 +35,40 @@ colgroup col:nth-child(4){width:10%}
     <tr><th>Job Info</th><th>Download</th><th>Enter Name</th><th>Send</th></tr>
   </thead>
   <tbody>
-    <tr class="job-row" data-row="11" data-job-id="job-011" data-page="3">
-      <td><div class="job-title">Job 11 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="11" data-job-id="job-011">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-011" class="btn dl-btn" role="button" data-role="download" data-row="11" data-job="011"
              data-fn="job11.txt" data-content="This is sample file for Job 11\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-011" class="name-input" placeholder="Enter your name" data-role="name" data-row="11" data-job="011"></td>
       <td><button id="send-job-011" class="send-btn" type="button" data-role="send" data-row="11" data-job="011">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="12" data-job-id="job-012" data-page="3">
-      <td><div class="job-title">Job 12 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="12" data-job-id="job-012">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-012" class="btn dl-btn" role="button" data-role="download" data-row="12" data-job="012"
              data-fn="job12.txt" data-content="This is sample file for Job 12\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-012" class="name-input" placeholder="Enter your name" data-role="name" data-row="12" data-job="012"></td>
       <td><button id="send-job-012" class="send-btn" type="button" data-role="send" data-row="12" data-job="012">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="13" data-job-id="job-013" data-page="3">
-      <td><div class="job-title">Job 13 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="13" data-job-id="job-013">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-013" class="btn dl-btn" role="button" data-role="download" data-row="13" data-job="013"
              data-fn="job13.txt" data-content="This is sample file for Job 13\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-013" class="name-input" placeholder="Enter your name" data-role="name" data-row="13" data-job="013"></td>
       <td><button id="send-job-013" class="send-btn" type="button" data-role="send" data-row="13" data-job="013">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="14" data-job-id="job-014" data-page="3">
-      <td><div class="job-title">Job 14 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="14" data-job-id="job-014">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-014" class="btn dl-btn" role="button" data-role="download" data-row="14" data-job="014"
              data-fn="job14.txt" data-content="This is sample file for Job 14\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-014" class="name-input" placeholder="Enter your name" data-role="name" data-row="14" data-job="014"></td>
       <td><button id="send-job-014" class="send-btn" type="button" data-role="send" data-row="14" data-job="014">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="15" data-job-id="job-015" data-page="3">
-      <td><div class="job-title">Job 15 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="15" data-job-id="job-015">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-015" class="btn dl-btn" role="button" data-role="download" data-row="15" data-job="015"
              data-fn="job15.txt" data-content="This is sample file for Job 15\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-015" class="name-input" placeholder="Enter your name" data-role="name" data-row="15" data-job="015"></td>
@@ -94,7 +79,7 @@ colgroup col:nth-child(4){width:10%}
 
 <div class="nav">
   <button class="nav-btn" type="button" data-target="page2.html">← Previous Page</button>
-  <button id="nav-next" class="nav-btn" type="button" disabled>Next Page →</button>
+  <button class="nav-btn" type="button" disabled>Next Page →</button>
 </div>
 
 <p class="small">TXT files are generated on the fly. Send button is dummy.</p>
@@ -123,37 +108,6 @@ colgroup col:nth-child(4){width:10%}
     });
   });
 
-  // RPA bridge helpers
-  function getRowEls(row){
-    return {
-      name: document.querySelector('[data-role="name"][data-row="'+row+'"]'),
-      dl  : document.querySelector('[data-role="download"][data-row="'+row+'"]'),
-      send: document.querySelector('[data-role="send"][data-row="'+row+'"]')
-    };
-  }
-  function fill(row, val){
-    const el = getRowEls(row).name;
-    if(!el){ setStatus('row '+row+' not found'); return false; }
-    el.focus(); el.value = val; el.dispatchEvent(new Event('input',{bubbles:true}));
-    setStatus('Filled row '+row+' with "'+val+'"'); return true;
-  }
-  function dl(row){ const el = getRowEls(row).dl; if(!el){setStatus('row '+row+' not found');return;} el.click(); }
-  function send(row){ const el = getRowEls(row).send; if(!el){setStatus('row '+row+' not found');return;} el.click(); }
-
-  const padRow = document.getElementById('pad-row');
-  const padName = document.getElementById('pad-name');
-  document.getElementById('pad-fill').addEventListener('click', ()=> fill(padRow.value, padName.value));
-  document.getElementById('pad-download').addEventListener('click', ()=> dl(padRow.value));
-  document.getElementById('pad-send').addEventListener('click', ()=> send(padRow.value));
-  document.getElementById('pad-fill-dl-send').addEventListener('click', ()=>{
-    if(fill(padRow.value, padName.value)){ dl(padRow.value); send(padRow.value); }
-  });
-  document.getElementById('pad-next').addEventListener('click', ()=>{
-    const nn = document.getElementById('nav-next'); const t = nn?.dataset?.target;
-    if (t) location.href = t; else setStatus('No next page');
-  });
-
-  // pager buttons
   document.querySelectorAll('.nav-btn').forEach(btn=>{
     if (btn.disabled) return;
     btn.addEventListener('click', ()=>{
