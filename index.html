@@ -24,26 +24,10 @@ colgroup col:nth-child(4){width:10%}
 .nav-btn[disabled]{opacity:.5;cursor:not-allowed}
 .small{color:#666;font-size:12px;margin-top:6px}
 .status{margin-top:8px;padding:6px 8px;border:1px dashed var(--bd);border-radius:8px;font-size:12px;color:#333;min-height:1.6em}
-
-/* --- RPA bridge --- */
-.bridge{display:flex;gap:8px;align-items:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fafafa;margin:6px 0 12px}
-.bridge input{padding:6px;border:1px solid var(--bd);border-radius:8px}
-.bridge label{font-size:12px;color:#333}
 </style>
 </head>
 <body>
 <h1>Job List (RPA Practice: TXT Download) — Page 1</h1>
-
-<!-- RPA ブリッジ（固定IDのみ触ればOK） -->
-<div class="bridge" aria-label="RPA Bridge">
-  <label>Row <input id="pad-row" type="number" min="1" max="999" value="1"></label>
-  <label>Name <input id="pad-name" type="text" placeholder="name here"></label>
-  <button id="pad-fill" class="btn" type="button">Fill name</button>
-  <button id="pad-download" class="btn" type="button">Download</button>
-  <button id="pad-send" class="btn" type="button">Send</button>
-  <button id="pad-fill-dl-send" class="btn" type="button">Fill+DL+Send</button>
-  <button id="pad-next" class="btn" type="button">Next Page</button>
-</div>
 
 <table class="job-table" aria-label="Job Table">
   <colgroup><col><col><col><col></colgroup>
@@ -51,41 +35,41 @@ colgroup col:nth-child(4){width:10%}
     <tr><th>Job Info</th><th>Download</th><th>Enter Name</th><th>Send</th></tr>
   </thead>
   <tbody>
-    <!-- data-row=1..5 / 表示テキストはすべて "Download" -->
-    <tr class="job-row" data-row="1" data-job-id="job-001" data-page="1">
-      <td><div class="job-title">Job 1 Title</div><div class="job-desc">Sample description.</div></td>
+    <!-- ※ 表示テキストは固定（Job Title / Download / Send） -->
+    <tr class="job-row" data-row="1" data-job-id="job-001">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-001" class="btn dl-btn" role="button" data-role="download" data-row="1" data-job="001"
              data-fn="job1.txt" data-content="This is sample file for Job 1\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-001" class="name-input" placeholder="Enter your name" data-role="name" data-row="1" data-job="001"></td>
       <td><button id="send-job-001" class="send-btn" type="button" data-role="send" data-row="1" data-job="001">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="2" data-job-id="job-002" data-page="1">
-      <td><div class="job-title">Job 2 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="2" data-job-id="job-002">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-002" class="btn dl-btn" role="button" data-role="download" data-row="2" data-job="002"
              data-fn="job2.txt" data-content="This is sample file for Job 2\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-002" class="name-input" placeholder="Enter your name" data-role="name" data-row="2" data-job="002"></td>
       <td><button id="send-job-002" class="send-btn" type="button" data-role="send" data-row="2" data-job="002">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="3" data-job-id="job-003" data-page="1">
-      <td><div class="job-title">Job 3 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="3" data-job-id="job-003">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-003" class="btn dl-btn" role="button" data-role="download" data-row="3" data-job="003"
              data-fn="job3.txt" data-content="This is sample file for Job 3\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-003" class="name-input" placeholder="Enter your name" data-role="name" data-row="3" data-job="003"></td>
       <td><button id="send-job-003" class="send-btn" type="button" data-role="send" data-row="3" data-job="003">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="4" data-job-id="job-004" data-page="1">
-      <td><div class="job-title">Job 4 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="4" data-job-id="job-004">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-004" class="btn dl-btn" role="button" data-role="download" data-row="4" data-job="004"
              data-fn="job4.txt" data-content="This is sample file for Job 4\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-004" class="name-input" placeholder="Enter your name" data-role="name" data-row="4" data-job="004"></td>
       <td><button id="send-job-004" class="send-btn" type="button" data-role="send" data-row="4" data-job="004">Send</button></td>
     </tr>
 
-    <tr class="job-row" data-row="5" data-job-id="job-005" data-page="1">
-      <td><div class="job-title">Job 5 Title</div><div class="job-desc">Sample description.</div></td>
+    <tr class="job-row" data-row="5" data-job-id="job-005">
+      <td><div class="job-title">Job Title</div><div class="job-desc">Sample description.</div></td>
       <td><a id="dl-job-005" class="btn dl-btn" role="button" data-role="download" data-row="5" data-job="005"
              data-fn="job5.txt" data-content="This is sample file for Job 5\nLine 2: Some example data\nLine 3: End of file">Download</a></td>
       <td><input id="name-job-005" class="name-input" placeholder="Enter your name" data-role="name" data-row="5" data-job="005"></td>
@@ -96,7 +80,7 @@ colgroup col:nth-child(4){width:10%}
 
 <div class="nav">
   <button class="nav-btn" type="button" disabled>← Previous Page</button>
-  <button id="nav-next" class="nav-btn" type="button" data-target="page2.html">Next Page →</button>
+  <button class="nav-btn" type="button" data-target="page2.html">Next Page →</button>
 </div>
 
 <p class="small">TXT files are generated on the fly. Send button is dummy.</p>
@@ -108,7 +92,7 @@ colgroup col:nth-child(4){width:10%}
   const createdUrls = [];
   const setStatus = (m)=> statusBox.textContent = m;
 
-  // Blob URL を事前割当（瞬間要素なし）
+  // 安定した Blob URL を事前割当
   document.querySelectorAll('.dl-btn').forEach(a=>{
     const content = a.dataset.content || '';
     const filename = a.dataset.fn || 'download.txt';
@@ -127,32 +111,14 @@ colgroup col:nth-child(4){width:10%}
     });
   });
 
-  // --- RPA Bridge handlers ---
-  function getRowEls(row){
-    return {
-      name: document.querySelector('[data-role="name"][data-row="'+row+'"]'),
-      dl  : document.querySelector('[data-role="download"][data-row="'+row+'"]'),
-      send: document.querySelector('[data-role="send"][data-row="'+row+'"]')
-    };
-  }
-  function fill(row, val){
-    const el = getRowEls(row).name;
-    if(!el){ setStatus('row '+row+' not found'); return false; }
-    el.focus(); el.value = val; el.dispatchEvent(new Event('input',{bubbles:true}));
-    setStatus('Filled row '+row+' with "'+val+'"'); return true;
-  }
-  function dl(row){ const el = getRowEls(row).dl; if(!el){setStatus('row '+row+' not found');return;} el.click(); }
-  function send(row){ const el = getRowEls(row).send; if(!el){setStatus('row '+row+' not found');return;} el.click(); }
-
-  const padRow = document.getElementById('pad-row');
-  const padName = document.getElementById('pad-name');
-  document.getElementById('pad-fill').addEventListener('click', ()=> fill(padRow.value, padName.value));
-  document.getElementById('pad-download').addEventListener('click', ()=> dl(padRow.value));
-  document.getElementById('pad-send').addEventListener('click', ()=> send(padRow.value));
-  document.getElementById('pad-fill-dl-send').addEventListener('click', ()=>{
-    if(fill(padRow.value, padName.value)){ dl(padRow.value); send(padRow.value); }
+  // ページャ
+  document.querySelectorAll('.nav-btn').forEach(btn=>{
+    if (btn.disabled) return;
+    btn.addEventListener('click', ()=>{
+      const target = btn.dataset.target;
+      if (target) location.href = target;
+    });
   });
-  document.getElementById('pad-next').addEventListener('click', ()=> location.href=document.getElementById('nav-next').dataset.target);
 
   window.addEventListener('beforeunload', ()=> createdUrls.forEach(u=> URL.revokeObjectURL(u)));
 })();
