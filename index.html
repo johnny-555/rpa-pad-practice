@@ -35,90 +35,103 @@ colgroup col:nth-child(4){width:10%}
     <tr><th>Job Info</th><th>Download</th><th>Enter Name</th><th>Send</th></tr>
   </thead>
   <tbody>
-    <tr data-job-id="job-001">
-      <td>
-        <div class="job-title">Job 1 Title</div>
-        <div class="job-desc">Sample description.</div>
-      </td>
-      <td>
-        <a id="dl-job-001" data-testid="dl-job-001" class="btn dl-btn"
-           data-fn="job1.txt"
-           data-content="This is sample file for Job 1\nLine 2: Some example data\nLine 3: End of file"
-           role="button" aria-label="Download Job 1">Download 1</a>
-      </td>
-      <td>
-        <input id="name-job-001" data-testid="name-job-001" class="name-input" placeholder="Enter your name" aria-label="Name for Job 1">
-      </td>
-      <td>
-        <button id="send-job-001" data-testid="send-job-001" class="send-btn" type="button" aria-label="Send Job 1">Send</button>
-      </td>
+    <!-- data-row は 1..5 / data-page="1" / data-role = download|name|send -->
+    <tr class="job-row" data-row="1" data-job-id="job-001" data-page="1">
+      <td><div class="job-title">Job 1 Title</div><div class="job-desc">Sample description.</div></td>
+      <td><a id="dl-job-001" class="btn dl-btn" role="button" aria-label="Download Job 1"
+             data-role="download" data-row="1" data-page="1" data-job="001"
+             data-fn="job1.txt"
+             data-content="This is sample file for Job 1\nLine 2: Some example data\nLine 3: End of file">Download 1</a></td>
+      <td><input id="name-job-001" class="name-input" placeholder="Enter your name" aria-label="Name input"
+                 data-role="name" data-row="1" data-page="1" data-job="001"></td>
+      <td><button id="send-job-001" class="send-btn" type="button" aria-label="Send"
+                  data-role="send" data-row="1" data-page="1" data-job="001">Send</button></td>
     </tr>
-    <tr data-job-id="job-002">
+
+    <tr class="job-row" data-row="2" data-job-id="job-002" data-page="1">
       <td><div class="job-title">Job 2 Title</div><div class="job-desc">Sample description.</div></td>
-      <td><a id="dl-job-002" data-testid="dl-job-002" class="btn dl-btn" data-fn="job2.txt" data-content="This is sample file for Job 2\nLine 2: Some example data\nLine 3: End of file" role="button" aria-label="Download Job 2">Download 2</a></td>
-      <td><input id="name-job-002" data-testid="name-job-002" class="name-input" placeholder="Enter your name" aria-label="Name for Job 2"></td>
-      <td><button id="send-job-002" data-testid="send-job-002" class="send-btn" type="button" aria-label="Send Job 2">Send</button></td>
+      <td><a id="dl-job-002" class="btn dl-btn" role="button" aria-label="Download Job 2"
+             data-role="download" data-row="2" data-page="1" data-job="002"
+             data-fn="job2.txt"
+             data-content="This is sample file for Job 2\nLine 2: Some example data\nLine 3: End of file">Download 2</a></td>
+      <td><input id="name-job-002" class="name-input" placeholder="Enter your name" aria-label="Name input"
+                 data-role="name" data-row="2" data-page="1" data-job="002"></td>
+      <td><button id="send-job-002" class="send-btn" type="button" aria-label="Send"
+                  data-role="send" data-row="2" data-page="1" data-job="002">Send</button></td>
     </tr>
-    <tr data-job-id="job-003">
+
+    <tr class="job-row" data-row="3" data-job-id="job-003" data-page="1">
       <td><div class="job-title">Job 3 Title</div><div class="job-desc">Sample description.</div></td>
-      <td><a id="dl-job-003" data-testid="dl-job-003" class="btn dl-btn" data-fn="job3.txt" data-content="This is sample file for Job 3\nLine 2: Some example data\nLine 3: End of file" role="button" aria-label="Download Job 3">Download 3</a></td>
-      <td><input id="name-job-003" data-testid="name-job-003" class="name-input" placeholder="Enter your name" aria-label="Name for Job 3"></td>
-      <td><button id="send-job-003" data-testid="send-job-003" class="send-btn" type="button" aria-label="Send Job 3">Send</button></td>
+      <td><a id="dl-job-003" class="btn dl-btn" role="button" aria-label="Download Job 3"
+             data-role="download" data-row="3" data-page="1" data-job="003"
+             data-fn="job3.txt"
+             data-content="This is sample file for Job 3\nLine 2: Some example data\nLine 3: End of file">Download 3</a></td>
+      <td><input id="name-job-003" class="name-input" placeholder="Enter your name" aria-label="Name input"
+                 data-role="name" data-row="3" data-page="1" data-job="003"></td>
+      <td><button id="send-job-003" class="send-btn" type="button" aria-label="Send"
+                  data-role="send" data-row="3" data-page="1" data-job="003">Send</button></td>
     </tr>
-    <tr data-job-id="job-004">
+
+    <tr class="job-row" data-row="4" data-job-id="job-004" data-page="1">
       <td><div class="job-title">Job 4 Title</div><div class="job-desc">Sample description.</div></td>
-      <td><a id="dl-job-004" data-testid="dl-job-004" class="btn dl-btn" data-fn="job4.txt" data-content="This is sample file for Job 4\nLine 2: Some example data\nLine 3: End of file" role="button" aria-label="Download Job 4">Download 4</a></td>
-      <td><input id="name-job-004" data-testid="name-job-004" class="name-input" placeholder="Enter your name" aria-label="Name for Job 4"></td>
-      <td><button id="send-job-004" data-testid="send-job-004" class="send-btn" type="button" aria-label="Send Job 4">Send</button></td>
+      <td><a id="dl-job-004" class="btn dl-btn" role="button" aria-label="Download Job 4"
+             data-role="download" data-row="4" data-page="1" data-job="004"
+             data-fn="job4.txt"
+             data-content="This is sample file for Job 4\nLine 2: Some example data\nLine 3: End of file">Download 4</a></td>
+      <td><input id="name-job-004" class="name-input" placeholder="Enter your name" aria-label="Name input"
+                 data-role="name" data-row="4" data-page="1" data-job="004"></td>
+      <td><button id="send-job-004" class="send-btn" type="button" aria-label="Send"
+                  data-role="send" data-row="4" data-page="1" data-job="004">Send</button></td>
     </tr>
-    <tr data-job-id="job-005">
+
+    <tr class="job-row" data-row="5" data-job-id="job-005" data-page="1">
       <td><div class="job-title">Job 5 Title</div><div class="job-desc">Sample description.</div></td>
-      <td><a id="dl-job-005" data-testid="dl-job-005" class="btn dl-btn" data-fn="job5.txt" data-content="This is sample file for Job 5\nLine 2: Some example data\nLine 3: End of file" role="button" aria-label="Download Job 5">Download 5</a></td>
-      <td><input id="name-job-005" data-testid="name-job-005" class="name-input" placeholder="Enter your name" aria-label="Name for Job 5"></td>
-      <td><button id="send-job-005" data-testid="send-job-005" class="send-btn" type="button" aria-label="Send Job 5">Send</button></td>
+      <td><a id="dl-job-005" class="btn dl-btn" role="button" aria-label="Download Job 5"
+             data-role="download" data-row="5" data-page="1" data-job="005"
+             data-fn="job5.txt"
+             data-content="This is sample file for Job 5\nLine 2: Some example data\nLine 3: End of file">Download 5</a></td>
+      <td><input id="name-job-005" class="name-input" placeholder="Enter your name" aria-label="Name input"
+                 data-role="name" data-row="5" data-page="1" data-job="005"></td>
+      <td><button id="send-job-005" class="send-btn" type="button" aria-label="Send"
+                  data-role="send" data-row="5" data-page="1" data-job="005">Send</button></td>
     </tr>
   </tbody>
 </table>
 
 <div class="nav">
-  <button id="nav-prev" data-testid="nav-prev" class="nav-btn" type="button" disabled aria-label="Previous Page">← Previous Page</button>
-  <button id="nav-next" data-testid="nav-next" class="nav-btn" type="button" data-target="page2.html" aria-label="Next Page">Next Page →</button>
+  <button class="nav-btn" type="button" disabled aria-label="Previous Page">← Previous Page</button>
+  <button class="nav-btn" type="button" data-target="page2.html" aria-label="Next Page">Next Page →</button>
 </div>
 
 <p class="small">TXT files are generated on the fly. Send button is dummy.</p>
-<div id="status" class="status" data-testid="status" aria-live="polite"></div>
+<div id="status" class="status" aria-live="polite"></div>
 
 <script>
 (function(){
   const statusBox = document.getElementById('status');
   const createdUrls = [];
+  const setStatus = (m)=> statusBox.textContent = m;
 
-  function setStatus(msg){
-    statusBox.textContent = msg;
-  }
-
-  // Build stable Blob URLs once (no ephemeral DOM)
+  // 安定した Blob URL を事前割当（瞬間要素なし）
   document.querySelectorAll('.dl-btn').forEach(a=>{
     const content = a.dataset.content || '';
     const filename = a.dataset.fn || 'download.txt';
     const url = URL.createObjectURL(new Blob([content], {type:'text/plain'}));
     createdUrls.push(url);
-    a.href = url;
-    a.setAttribute('download', filename);
+    a.href = url; a.setAttribute('download', filename);
     a.addEventListener('click', ()=> setStatus('Downloaded: ' + filename));
   });
 
-  // Send buttons just echo name — visible state change for PAD to wait on
-  document.querySelectorAll('.send-btn').forEach(btn=>{
+  // 送信（状態の可視化）
+  document.querySelectorAll('[data-role="send"]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
-      const row = btn.closest('tr');
-      const job = row?.dataset.jobId || 'unknown';
-      const name = row?.querySelector('.name-input')?.value || '';
-      setStatus(`Sent: ${job} by "${name}"`);
+      const row = btn.dataset.row;
+      const nameEl = document.querySelector('[data-role="name"][data-row="'+row+'"]');
+      setStatus(`Sent: row=${row} by "${nameEl?.value||''}"`);
     });
   });
 
-  // Pager: buttons with explicit targets
+  // ページャ
   document.querySelectorAll('.nav-btn').forEach(btn=>{
     if (btn.disabled) return;
     btn.addEventListener('click', ()=>{
@@ -127,7 +140,6 @@ colgroup col:nth-child(4){width:10%}
     });
   });
 
-  // Clean up Blob URLs on page unload
   window.addEventListener('beforeunload', ()=> createdUrls.forEach(u=> URL.revokeObjectURL(u)));
 })();
 </script>
